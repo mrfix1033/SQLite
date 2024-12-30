@@ -69,7 +69,6 @@ class DatabaseActivity : AppCompatActivityWithExitMenu() {
 
         buttonGetData.setOnClickListener {
             databaseManager.select {
-                if (it == null) throw RuntimeException("Произошла ошибка, cursor=null")
                 persons.clear()
                 while (it.moveToNext()) {
                     it.run {

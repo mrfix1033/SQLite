@@ -51,7 +51,7 @@ class DatabaseManager(context: Context, factory: SQLiteDatabase.CursorFactory?) 
         }
     }
 
-    fun select(func: (cursor: Cursor?) -> Any) {
+    fun select(func: (cursor: Cursor) -> Any) {
         readableDatabase.use { func(it.rawQuery("SELECT * FROM $TABLE_NAME", null)) }
     }
 
